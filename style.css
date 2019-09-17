@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+div.main {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+input.home{
+    width:200px;
+    height:70px;
+    margin:10px 0px 30px 0px;
+    text-align:center;
+    font-size:xx-large;
+    border:1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    line-height: 35px;
+    margin: 0px;
+}
+
+th {
+    font-size: x-large;
+    font-weight: bold;
+    vertical-align: top;
+    color: #fff;
+    background: #ce4869;
+}
+
+th.id {
+    width: 60px;
+    padding: 10px;
+}
+
+th.id:first-child {
+    border-top-left-radius:10px;
+}
+
+th.id:last-child {
+    border-top-right-radius:10px;
+}
+
+th.title {
+    width: 580px;
+    padding: 10px;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    font-size: x-large;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #eee;
+}
+
+td.id {
+    width: 60px;
+    display: inline-block;
+}
+
+td.id2 {
+    width: 60px;
+    display: inline-block;
+    background:#ffffff;
+}
+
+td.title {
+    width: 580px;
+    text-align: left;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+td.title2 {
+    width: 580px;
+    text-align: left;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background:#ffffff;
+}
+</style>
+</html>
