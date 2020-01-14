@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="/style.css">
 
   <?php
-  // MySQL 접속
+  // Access MySQL Database
     $conn=mysqli_connect('localhost', 'root', 'password', 'songdolib');
 
     $from = $_GET['from'];
@@ -40,7 +40,7 @@
 
       <div style="font-family:noto sans;">
       <?php
-    //책 리스트 head 출력
+    //Print Booklist Table Head
       echo "<table>
               <tr>
                 <th class='id'>ID</th>
@@ -52,7 +52,7 @@
             </table>";
 
 
-    //책 리스트 테이블로 출력
+    //Print Booklist Table Body
       while($row=mysqli_fetch_assoc($sql_result)){
         $id=$row['id'];
         $title=$row['title'];
