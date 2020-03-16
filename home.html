@@ -3,29 +3,83 @@
 <head>
   <title>Shelf Organizer</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="/style.css?ver=1">
-
+  <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
+
 <body>
-    <center>
-      <div style="font-family:Noto Sans; font-size:80px; font-weight:bold; margin:300px 0px 70px 0px;">Shelf Organizer</div>
-        <form action="/main.php" method="get">
-        <div style="display: flex; align-items: center; justify-content: center">
-          <div style="font-family:noto sans; font-size:40px; margin:20px; font-weight:600;">
-            From:<br>
-            <input class="home" type="text" name="from" autocomplete="off">
-          </div>
-          <div style="font-family:noto sans; font-size:40px; margin:20px; font-weight:600;">
-            To:<br>
-            <input class="home" type="text" name="to" autocomplete="off">
-          </div>
-        </div>
+  <h1>Shelf Organizer</h1>
+  <form action="/main.php" method="get">
+    <div class="center">
+      <h2>
+        From:<br>
+        <input class="home" type="text" name="from" autocomplete="off">
+      </h2>
+      <h2 class="from_to">
+        To:<br>
+        <input class="home" type="text" name="to" autocomplete="off">
+      </h2>
+    </div>
+    <input type="submit" class="inputbutton" value="Submit">
+  </form>
 
-          <p>
-            <input type="submit" value="Submit" style="font-family:noto sans; width:130px; font-size:xx-large; margin:10px;">
-          </p>
-        </form>
+  <table>
+    <tr>
+      <th class="category"></th>
+      <th class="id_range">송WG</th>
+      <th class="id_range">송G</th>
+    </tr>
+    <tr>
+      <td class="category">000</td>
+      <td class="id_range">393~452</td>
+      <td class="id_range">4954~5554</td>
+    </tr>
+    <tr>
+      <td class="category">100</td>
+      <td class="id_range">453~636</td>
+      <td class="id_range">555~6610</td>
+    </tr>
+    <tr>
+      <td class="category">200</td>
+      <td class="id_range">637~999</td>
+      <td class="id_range">6611~7130</td>
+    </tr>
+    <tr>
+      <td class="category">300</td>
+      <td class="id_range">1000~2073</td>
+      <td class="id_range">7131~9853</td>
+    </tr>
+    <tr>
+      <td class="category">400</td>
+      <td class="id_range">2074~2198</td>
+      <td class="id_range">9854~10362</td>
+    </tr>
+    <tr>
+      <td class="category">500</td>
+      <td class="id_range">2199~2656</td>
+      <td class="id_range">10363~11813</td>
+    </tr>
+    <tr>
+      <td class="category">600</td>
+      <td class="id_range">2657~2889</td>
+      <td class="id_range">11814~12537</td>
+    </tr>
+    <tr>
+      <td class="category">700</td>
+      <td class="id_range">2890~2984</td>
+      <td class="id_range">12538~13043</td>
+    </tr>
+    <tr>
+      <td class="category">800</td>
+      <td class="id_range">2985~4623</td>
+      <td class="id_range">13044~15429</td>
+    </tr>
+    <tr>
+      <td class="category">900</td>
+      <td class="id_range">4624~4953</td>
+      <td class="id_range">15430~16673</td>
+    </tr>
+  </table>
 
-    <center>
 </body>
+
 </html>
