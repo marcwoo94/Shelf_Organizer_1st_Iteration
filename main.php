@@ -35,9 +35,8 @@
       <?php
     //Print Booklist Table Head
       echo "<tr>
-                <th class='smallTitle id'>ID</th>
                 <th class='smallTitle title'>제목</th>
-                <th class='smallTitle id'>청구기호</th>
+                <th class='smallTitle call'>청구기호</th>
               <tr>";
 
 
@@ -49,8 +48,7 @@
 
         echo "<tr>";
           if ($row['checkout'] == 0 and $row['missing'] == 0){
-            echo "<td class='id'>$id</td>
-                  <td class='title'>$title</td>
+            echo "<td class='title'>$title</td>
                   <form action='/main.php', method='get'>
                   <td class='call'>
                     $call_num
@@ -59,8 +57,7 @@
                 </tr>";
           }
           elseif ($row['checkout'] == 1 or $row['missing'] == 1){
-            echo "<td class='checkout id'>$id</td>
-                  <td class='checkout title'>$title</td>
+            echo "<td class='checkout title'>$title</td>
                   <form action='/main.php', method='get'>
                   <td class='checkout call'>
                     $call_num
@@ -76,8 +73,14 @@
       <input style="display:none;" name="from" value="<?php echo $from; ?>">
       <input style="display:none;" name="to" value="<?php echo $to; ?>">
 
-      <input type="submit" class="home" value="Update">
-      <a href="/home.html"><input type="button" class="home" value="Return"></a>
+      <div class="center">
+        <h2>
+          <input type="submit" class="home" value="Update">
+        </h2>
+        <h2>
+          <a href="/home.html"><input type="button" class="home" value="Return">
+        </h2>
+      </div>
   </form>
 
 </body>

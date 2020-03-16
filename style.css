@@ -21,28 +21,20 @@ h1 {
     margin: 80px 0px 60px 0px;
 }
 
-.no_deco {
-    text-decoration: none;
-    color: #000;
-}
-
 h2 {
+    text-align: center;
     font-family: Noto Sans;
     font-size: 60px;
     margin: 0px 40px 0px 0px;
     font-weight: 600;
 }
 
-.inputbutton {
-    position: relative;
-    left:50%;
-    width: 400px;
-    height: 120px;
-    text-align: center;
-    font-size: 60px;
+.no_deco {
+    text-decoration: none;
+    color: #000;
 }
 
-.home {
+input.home {
     width: 400px;
     height: 120px;
     margin: 10px 0px 30px 0px;
@@ -83,19 +75,15 @@ td {
     width: 40%;
 }
 
-.id {
-    width: 20%;
-}
-
 .title {
-    width: 40%;
+    width: 70%;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
 .call {
-    width: 40%;
+    width: 30%;
 }
 
 .largerCheckbox {
