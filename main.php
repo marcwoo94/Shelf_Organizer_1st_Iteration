@@ -7,7 +7,7 @@
 
   <?php
   // Access MySQL Database
-    $conn=mysqli_connect('localhost', 'root', 'password', 'songdolib');
+    $conn=mysqli_connect('localhost', 'root', '4243109', 'songdolib');
 
     $from = $_GET['from'];
     $to = $_GET['to'];
@@ -16,8 +16,8 @@
       $checkbox_value = $_GET['checkbox'];
       $checkbox_count = count($checkbox_value);
         foreach ($checkbox_value as $checkbox_count){
-          $sql_nip_fix = "UPDATE booklist SET nip = NOT nip WHERE id = $checkbox_count";
-          $sql_nip_fix_result = mysqli_query($conn, $sql_nip_fix);
+          $sql_missing_fix = "UPDATE booklist SET missing = NOT missing WHERE id = $checkbox_count";
+          $sql_missing_fix_result = mysqli_query($conn, $sql_missing_fix);
         };
     }
 
@@ -28,87 +28,57 @@
 </head>
 
 <body>
-  <center>
-  <div class='main'>
-      <div style="font-family:noto sans; font-size:50px; font-weight:700; margin:50px 0px 20px 0px;">
-        <a href="home.html" style="text-decoration:none; color:#000;">Shelf Organizer</a>
-      </div>
-      <div style="font-family:noto sans; font-size:30px; font-weight:700; margin:10px 10px;">
-        ID: <?php echo $from.'~'.$to; ?>
-      </div>
-      <br>
+      <h1><a href="/home.html" class="no_deco">Shelf Organizer</a></h1>
+      <h2>ID: <?php echo $from.'~'.$to; ?></h2>
 
-      <div style="font-family:noto sans;">
+      <table>
       <?php
     //Print Booklist Table Head
-      echo "<table>
-              <tr>
-                <th class='id'>ID</th>
-                <th class='title'>Title</th>
-                <th class='id'>CO</th>
-                <th class='id'>NP</th>
-                <th class='id'>CB</th>
-              <tr>
-            </table>";
+      echo "<tr>
+                <th class='smallTitle id'>ID</th>
+                <th class='smallTitle title'>제목</th>
+                <th class='smallTitle id'>청구기호</th>
+              <tr>";
 
 
     //Print Booklist Table Body
       while($row=mysqli_fetch_assoc($sql_result)){
         $id=$row['id'];
         $title=$row['title'];
+        $call_num=$row['call_num'];
 
-          if ($row['checkout'] == false){
-            $checkout = 'F';
-          }
-          else {
-            $checkout = 'T';
-          }
-
-          if ($row['nip'] == false){
-            $nip = 'F';
-          }
-          else {
-            $nip = 'T';
-          }
-
-        echo "<table class='id'>
-                <tr>";
-          if ($row['sample'] == false){
+        echo "<tr>";
+          if ($row['checkout'] == 0 and $row['missing'] == 0){
             echo "<td class='id'>$id</td>
                   <td class='title'>$title</td>
-                  <td class='id'>$checkout</td>
-                  <td class='id'>$nip</td>
-                <form action='/main.php', method='get'>
-                  <td class='id'>
-                    <input type='checkbox' id='$id' name='checkbox[]' value='$id'>
+                  <form action='/main.php', method='get'>
+                  <td class='call'>
+                    $call_num
+                    <input type='checkbox' class='largerCheckbox' id='$id' name='checkbox[]' value='$id'>
                   </td>
-                </tr>
-              </table>";
+                </tr>";
           }
-          else{
-            echo "<td class='id2'>$id</td>
-                  <td class='title2'>$title</td>
-                  <td class='id2'>$checkout</td>
-                  <td class='id2'>$nip</td>
-              <form action='/main.php', method='get'>
-                  <td class='id2'>
-                    <input type='checkbox' id='$id' name='checkbox[]' value='$id'>
+          elseif ($row['checkout'] == 1 or $row['missing'] == 1){
+            echo "<td class='checkout id'>$id</td>
+                  <td class='checkout title'>$title</td>
+                  <form action='/main.php', method='get'>
+                  <td class='checkout call'>
+                    $call_num
+                    <input type='checkbox' class='largerCheckbox' id='$id' name='checkbox[]' value='$id'>
                   </td>
-                </tr>
-              </table>";
+                </tr>";
           }
       };
-
-        ?>
-      </div>
+      
+      ?>
+      </table>
 
       <input style="display:none;" name="from" value="<?php echo $from; ?>">
       <input style="display:none;" name="to" value="<?php echo $to; ?>">
-      <br><br>
-      <h3><input type="submit" value="Update" style="font-family:noto sans; font-size:x-large;">
-      <a href="/home.html"><input type="button" value="Return" style="font-family: noto sans; font-size:x-large;"></a></h3>
+
+      <input type="submit" class="home" value="Update">
+      <a href="/home.html"><input type="button" class="home" value="Return"></a>
   </form>
-  </div>
 
 </body>
 </html>

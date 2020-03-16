@@ -2,94 +2,114 @@
 <html>
 <style>
 
-div.main {
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    margin-bottom: 20px;
+body {
+    padding: 0px 20px;
 }
 
-input.home{
-    width:200px;
-    height:70px;
-    margin:10px 0px 30px 0px;
-    text-align:center;
-    font-size:xx-large;
-    border:1px solid black;
+.center {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+}
+
+
+h1 {
+    text-align: center;
+    font-family: Noto Sans;
+    font-size: 120px;
+    font-weight: bold;
+    margin: 80px 0px 60px 0px;
+}
+
+.no_deco {
+    text-decoration: none;
+    color: #000;
+}
+
+h2 {
+    font-family: Noto Sans;
+    font-size: 60px;
+    margin: 0px 40px 0px 0px;
+    font-weight: 600;
+}
+
+.inputbutton {
+    position: relative;
+    left:50%;
+    width: 400px;
+    height: 120px;
+    text-align: center;
+    font-size: 60px;
+}
+
+.home {
+    width: 400px;
+    height: 120px;
+    margin: 10px 0px 30px 0px;
+    text-align: center;
+    font-size: 60px;
+    border: 2px solid black;
 }
 
 table {
+    table-layout: fixed;
+    width: 100%;
+    margin: 30px 0px;
     border-collapse: collapse;
-    text-align: center;
-    line-height: 35px;
-    margin: 0px;
+    font-family: Noto Sans;
+    text-align: left;
+    line-height: 90px;
 }
 
 th {
-    font-size: x-large;
-    font-weight: bold;
-    vertical-align: top;
+    font-size: 50px;
+    padding: 10px 40px;
     color: #fff;
     background: #ce4869;
 }
 
-th.id {
-    width: 60px;
-    padding: 10px;
-}
-
-th.id:first-child {
-    border-top-left-radius:10px;
-}
-
-th.id:last-child {
-    border-top-right-radius:10px;
-}
-
-th.title {
-    width: 580px;
-    padding: 10px;
-    text-align: left;
-}
-
 td {
-    padding: 10px;
-    font-size: x-large;
-    vertical-align: top;
+    font-size: 50px;
+    padding: 10px 40px;
     border-bottom: 1px solid #ccc;
     background: #eee;
 }
 
-td.id {
-    width: 60px;
-    display: inline-block;
+.category {
+    width: 20%;
 }
 
-td.id2 {
-    width: 60px;
-    display: inline-block;
-    background:#ffffff;
+.id_range {
+    width: 40%;
 }
 
-td.title {
-    width: 580px;
-    text-align: left;
-    display: inline-block;
+.id {
+    width: 20%;
+}
+
+.title {
+    width: 40%;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
-td.title2 {
-    width: 580px;
-    text-align: left;
-    display: inline-block;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+.call {
+    width: 40%;
+}
+
+.largerCheckbox {
+    width: 40px;
+    height: 40px;
+}
+
+.checkout {
     background:#ffffff;
 }
+
+.smallTitle {
+    font-size: 40px;
+}
+
 </style>
 </html>
